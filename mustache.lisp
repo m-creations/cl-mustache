@@ -577,6 +577,9 @@ The syntax grammar is:
 variable before calling mustache-rendering and friends. Default is
 *standard-output*.")
 
+(defvar *mustache-output* (make-synonym-stream '*output-stream*)
+  "Deprecated in favor of MUSTACHE:*OUTPUT* since version 0.10.0")
+
 (defun %output ()
   (if (eq *mustache-output* *real-standard-output*)
       *output-stream*
